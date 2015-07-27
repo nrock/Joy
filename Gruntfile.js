@@ -1,19 +1,20 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        root: 'assets/',
         concat: {
             dist: {
                 src: [
-                    'assets/js/*.js',
-                    'assets/vendors/*.js'
+                    'assets/vendors/*.js',
+                    '<%= root %>/js/*.js'
                 ],
-                dest: 'build/assets/js/main.js'
+                dest: 'build/assets/js/<%= pkg.name %>.js'
             }
         },
         uglify: {
             build: {
-                src: 'build/assets/js/main.js',
-                dest: 'build/assets/js/main.min.js'
+                src: 'build/assets/js/<%= pkg.name %>.js',
+                dest: 'build/assets/js/<%= pkg.name %>.min.js'
             }
         },
         imagemin: {
@@ -57,6 +58,13 @@ module.exports = function(grunt) {
             options: { 
                 force: true
             }
+        },
+
+
+        log: {
+            foo: [1,2,3,5,8],
+            bar: 'Hello world',
+            baz: false
         }
     });
     
@@ -67,5 +75,33 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['clean', 'concat', 'sass', 'uglify', 'imagemin', 'watch']);
+    grunt.log.write('This is a sample project to learn grunt');
+    grunt.registerTask('default', 'Run all tasks', ['clean', 'concat', 'sass', 'uglify', 'imagemin', 'watch']);
+
+    grunt.registerMultiTask('log', 'Log whatever', function () {
+        grunt.log.writeln(this.target + ': ' + this.data);
+    });
+
+    grunt.registerMultiTask('log', 'Log arguments', function (arg0, arg1) {
+        grunt.log.writeln(this.target + ': ' + arg0 + ' ' + arg1);
+        grunt.log.writeln(this.target + ': ' + Array.prototype.join.call(arguments, '-----'));
+    });
+
+    grunt.registerTask('custom', 'My task to run other sub-tasks', function () {
+        grunt.task.run('clean');
+        grunt.task.run('concat');
+    });
+
+    grunt.registerTask('fail', 'This task is failed by returning false', function () {
+        return false;
+    });
+
+    grunt.registerTask('require', 'This task require the task `fail` to finish first', function () {
+        grunt.task.requires('fail');
+        grunt.log.writeln('Hello, requires');
+        // $ grunt require
+        // Warning: Required task "fail" must be run first. Use --force to continue.
+        // $ grunt fail require
+        // Warning: Task "fail" failed. Use --force to continue.
+    })
 };
