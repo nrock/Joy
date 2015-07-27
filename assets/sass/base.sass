@@ -1,0 +1,193 @@
+*
+  padding: 0
+  margin: 0
+  border: none
+  background: none
+  box-shadow: none
+  outline: none
+
+html
+  height: 100% 
+
+ul
+  list-style: none outside none
+
+a
+  text-decoration: none
+
+body
+  height: 100%
+  font-size: 12px
+  font-family: 'Lato', Helvetica, Arial, sans-serif
+  background-color: white
+
+input, select, textarea, button
+  font-family: inherit
+
+textarea
+  resize: vertical
+  overflow-y: auto
+
+.title1
+  font-size: 34px
+
+.title2
+  font-size: 24px
+
+pre, code
+  font-family: "courier new", courier, monospace
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder
+  color: #a9a9a9
+
+input.placeholdersjs, textarea.placeholdersjs
+  color: #a9a9a9
+
+div.summary
+  color: #a9a9a9
+
+.center-section
+  margin: 0 auto
+
+.main-content
+  margin-top: 38px
+
+.paragraph
+  font-size: 16px
+
+.wholePageWrapper
+  position: relative
+  min-height: 100%
+  overflow: hidden
+
+.article
+  padding: 0 12px
+
+.learn-more span
+  font-size: 16px
+  line-height: normal
+  background: image-url('learnmore_arrow.png') 100% 100% no-repeat
+  width: 100px
+  display: inline-block
+
+.pageTitle
+  line-height: normal
+  font-size: 42px
+  margin-bottom: 24px
+
+.regular-text
+  font-size: 16px
+  line-height: 24px
+  white-space: normal
+
+.small-text
+  font-size: 12px
+  line-height: 24px
+  white-space: normal
+
+.separator
+  height: 1px
+  margin: 24px 0
+
+.button-desc-bar
+  overflow: hidden
+  .button, .vertical-sep
+    float: left
+  .vertical-sep
+    margin: 0 30px
+    border-left: 1px solid #9E9C9C
+    line-height: 50px
+  .text
+    overflow: hidden
+    display: block
+  .fieldRow
+    margin: 0
+
+.code-block
+  background-color: #fbfbfb
+  border-radius: 6px
+  padding: 23px 38px 26px
+  margin: 12px 0
+  overflow-x: auto !important
+  min-height: 0%
+  // fix ie9 bug
+  span.greenText
+    font-weight: 700
+
+ul, li
+  &.list-disc
+    list-style: inside disc
+
+  &.list-decimal
+    list-style: inside decimal
+
+  &.list-alpha
+    list-style: inside lower-alpha
+
+//for tutorials
+
+.point-sections
+  > div
+    margin: 12px 0
+    > div:first-child
+      margin-right: 9px
+
+.list-disc
+  > div
+    margin: 0
+    > div:first-child
+      width: 15px
+      background: image-url('point.png') 50% 60% no-repeat
+
+div.indent-1
+  margin-left: 21px
+
+div.indent-2
+  margin-left: 42px
+
+.validate-container
+  position: relative
+
+.validate-error-container
+  position: absolute
+  color: red
+
+.is-login
+  .rcdpw-require-logout, .rcdpw-request-invitation
+    display: none !important
+
+.is-logout
+  .rcdpw-require-login
+    display: none !important
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important
+
+.lt-ie9 .ie8-depressed-prompt
+  display: block !important
+  background-color: yellow
+  position: fixed
+  text-align: center
+  top: 0
+  width: 100%
+  height: 60px
+  font-size: 18px
+  color: #ff8800
+  background-color: #f8f8f8
+  line-height: 60px
+  border-bottom: 1px solid #ebebeb
+  img
+    margin-right: 18px
+
+.vertical-sep-line
+  display: inline-block
+  position: absolute
+  top: 0
+  bottom: 0
+  border-left: 1px solid #c7c7c7
+
+.vertical-sep-line-left
+  margin-right: 12px
+
+.vertical-sep-line-right
+  margin-left: 13px

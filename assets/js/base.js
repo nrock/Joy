@@ -64,6 +64,7 @@ angular.module('Joy', ['ui.codemirror', 'sui'])
     }]);
 
 window.addEventListener('DOMContentLoaded', function () {
+    // Get the code before Angular bootstraps. 
     var $playGround = angular.element('#play-ground');
     if ($playGround.length > 0) {
         window.htmlCode = html_beautify($playGround.clone().wrap('<p/>').parent().html().trim());
