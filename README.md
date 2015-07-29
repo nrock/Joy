@@ -6,13 +6,13 @@ The tutorial employs [`karma`](http://karma-runner.github.io/0.13/index.html), [
  - factory
  - controller
  - directive
- - async $http call
+ - async `$http` call
 
 Multiple browsers are supported and [`karma-coverage`](https://github.com/karma-runner/karma-coverage) is used to generate coverage report.
 
 # How to run
 
-1. Download/clone this branch.
-2. Navigate to the root and `npm install --save-dev`
+1. Download/clone this branch, extract to a folder, say `joy-grunt`.
+2. Navigate to the `joy-grunt` and `npm install --save-dev`
 3. Run `karma`: `karma start`
 4. Coverage report is at `./coverage`
