@@ -1,7 +1,7 @@
 var app = angular.module('Joy', []);
 
 app.factory('Person', [function () {
-    return function Persion(name) {
+    return function Person(name) {
         this.name = name;
     };
 }]);
