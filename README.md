@@ -12,7 +12,7 @@ Multiple browsers are supported and [`karma-coverage`](https://github.com/karma-
 
 # How to run
 
-1. Download/clone this branch, extract to a folder, say `joy-grunt`.
-2. Navigate to the `joy-grunt` and `npm install --save-dev`
+1. Download/clone this branch, extract to a folder, say `joy-karma`.
+2. Navigate to the `joy-karma` and `npm install --save-dev`
 3. Run `karma`: `karma start`
 4. Coverage report is at `./coverage`
